@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entre em contato</title>
+    <script src="https://kit.fontawesome.com/e7eab8a619.js" crossorigin="anonymous"></script>
     <style>
         /* 
             #3d4d68 azul 
@@ -377,11 +378,11 @@
         <div>
             <h1>Alguma dúvida?</h1>
             <p>Envie-nos uma mensagem!</p>
-            <form>
-                <input type="text" placeholder="Seu nome">
-                <input type="text" placeholder="Seu e-mail">
-                <input type="text" placeholder="Seu telefone">
-                <textarea name="" id="" placeholder="Sua mensagem"></textarea>
+            <form id="mensagemForm">
+                <input type="text" placeholder="Seu nome" id="mensagemFormNome" required>
+                <input type="email" placeholder="Seu e-mail" id="mensagemFormEmail" required>
+                <input type="text" placeholder="Seu telefone" id="mensagemFormTelefone" required>
+                <textarea placeholder="Sua mensagem" id="mensagemFormMensagem" required></textarea>
                 <input type="submit" value="ENVIAR MENSAGEM">
             </form>
         </div>
@@ -414,8 +415,48 @@
         </div>
     </footer>
     <div>
-        <p>© 2020 Ana Estética Avançada, todos os direitos reservados</p>
+        <p>© 2024 Ana Estética Avançada, todos os direitos reservados</p>
     </div>
-    <script src="https://kit.fontawesome.com/e7eab8a619.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("mensagemForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById("mensagemFormNome").value;
+            const email = document.getElementById("mensagemFormEmail").value;
+            const telefone = document.getElementById("mensagemFormTelefone").value;
+            const mensagem = document.getElementById("mensagemFormMensagem").value;
+
+            if (!nome || !email || !telefone || !mensagem){
+                return;
+            }
+
+            try {
+                const response = await fetch("salvarmensagem.php", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    },
+                    body: new URLSearchParams({
+                        nome, email, telefone, mensagem
+                    })
+                })
+
+                const data = await response.json();
+
+                if (response.status === 200){
+                    alert(data.success)
+                } else {
+                    alert(data.error)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+
+            document.getElementById("mensagemFormNome").value = "";
+            document.getElementById("mensagemFormEmail").value = "";
+            document.getElementById("mensagemFormTelefone").value = "";
+            document.getElementById("mensagemFormMensagem").value = "";
+        })
+    </script>
 </body>
 </html>
