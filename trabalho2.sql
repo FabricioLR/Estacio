@@ -3,7 +3,7 @@ create database AcdnRentalCar;
 use AcdnRentalCar;
 
 create table sedes (
-    id int(10) not null auto_increment,
+    id int not null auto_increment,
     nome varchar(50) not null,
     endereco varchar(80) not null,
     telefone varchar(20) not null,
@@ -13,7 +13,7 @@ create table sedes (
 );
 
 create table carros (
-    id int(10) not null auto_increment,
+    id int not null auto_increment,
     placa varchar(10) not null,
     modelo varchar(40) not null,
     ano varchar(9) not null,
@@ -21,9 +21,9 @@ create table carros (
     quilometragem float(8,2) not null,
     descricao varchar(100) not null,
     situacao varchar(30) not null,
-    origemCarro int(10) not null,
-    localizacaoCarro int(10) not null,
-    classeCarro int(10) not null,
+    origemCarro int not null,
+    localizacaoCarro int not null,
+    classeCarro int not null,
     primary key (id)
 );
 
@@ -36,7 +36,7 @@ create table classesCarro (
 );
 
 create table clientes (
-    id int(10) not null auto_increment,
+    id int not null auto_increment,
     nome varchar(50) not null,
     cnh varchar(20) not null,
     validadeCnh DATE not null,
@@ -45,18 +45,18 @@ create table clientes (
 );
 
 create table reservas (
-    numero int(10) not null auto_increment,
-    diarias int(10) not null,
+    numero int not null auto_increment,
+    diarias int not null,
     dataLocacao DATE not null,
     dataRetorno DATE,
     quilometrosRodados float(8,2),
     multa float(8,2),
     situacao varchar(15) not null,
     total float(8,2),
-    carro_reserva int(10) not null,
-    cliente_reserva int(10) not null,
-    sedeLocacao int(10) not null,
-    sedeDevolucao int(10) not null,
+    carro_reserva int not null,
+    cliente_reserva int not null,
+    sedeLocacao int not null,
+    sedeDevolucao int not null,
     primary key (numero)
 );
 
