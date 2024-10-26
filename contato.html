@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre em contato</title>
+    <script src="https://kit.fontawesome.com/e7eab8a619.js" crossorigin="anonymous"></script>
+    <style>
+        /* 
+            #3d4d68 azul 
+        */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* position: fixed; */
+            z-index: 1000;
+        }
+
+        header > div{
+            width: 90%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header > div > div:nth-child(1){
+            width: 250px;
+            height: 80px;
+            background-color: #3d4d68;
+            cursor: pointer;
+        }
+
+        header > div > div:nth-child(1) img{
+            width: 100%;
+            height: 100%;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(1){
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(1) a{
+            text-decoration: none;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(1) a:nth-child(1) i{
+            margin-right: 10px;
+            width: 28px;
+            height: 28px;
+            background-color: #3b5998;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+        }
+        header > div > div:nth-child(2) div:nth-child(1) a:nth-child(2) i{
+            margin-right: 10px;
+            width: 28px;
+            height: 28px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+        }
+        header > div > div:nth-child(2) div:nth-child(1) a:nth-child(3) p{
+            font-size: 12px;
+            padding: 7px;
+            border: 1px solid #ddaf4c;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #ddaf4c;
+            margin-left: 30px;
+        }
+        header > div > div:nth-child(2) div:nth-child(1) a:nth-child(3) p:hover{
+            border: 1px solid #c59a3d;
+            color: #c59a3d;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(2){
+            display: flex;
+            height: 22px;
+        }
+        header > div > div:nth-child(2) div:nth-child(2) p{
+            margin-left: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            color: black;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(2) p a{
+            color: black;
+            outline: none;
+            text-decoration: none;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(2) p:last-child{
+            padding-bottom: 2px;
+            border-bottom: 2px solid #ddaf4c;
+        }
+
+        header > div > div:nth-child(2) div:nth-child(2) p:hover{
+            padding-bottom: 2px;
+            border-bottom: 2px solid #ddaf4c;
+        }
+
+        main{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            /* top: 100px; */
+        }
+        main > div:nth-child(1){
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        main > div:nth-child(1) h1{
+            margin-top: 60px;
+            font-size: 40px;
+        }
+
+        main > div:nth-child(1) > div{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        main > div:nth-child(1) > div > div{
+            width: 220px;
+            margin-right: 10px;
+        }
+
+        main > div:nth-child(1) > div > div > p{
+            font-size: 14px;
+            margin-top: 5px;
+            color: rgb(79, 78, 78);
+        }
+        main > div:nth-child(1) > div > div > p:nth-child(1){
+            font-size: 23px;
+            margin-top: 0px;
+            color: black;
+        }
+
+        main > div:nth-child(2){
+            width: 100%;
+            background-color: navajowhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main > div:nth-child(2) > h1{
+            margin-top: 60px;
+            color: black;
+            font-size: 40px;
+        }
+
+        main > div:nth-child(2) > p{
+            color: rgb(59, 59, 59);
+        }
+
+        main > div:nth-child(2) > form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        main > div:nth-child(2) > form > input{
+            width: 600px;
+            height: 25px;
+            padding: 5px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        main > div:nth-child(2) > form > input:last-child{
+            width: 250px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: none;
+            margin-top: 40px;
+            cursor: pointer;
+        }
+
+        main > div:nth-child(2) > form > input:last-child:hover{
+            background-color: rgb(238, 233, 233);
+        }
+
+        main > div:nth-child(2) > form > textarea{
+            width: 600px;
+            height: 300px;
+            padding: 5px;
+            outline: none;
+        }
+
+        main > div:nth-child(3){
+            width: 100%;
+            height: 600px;
+        }
+
+        main > div:nth-child(3) > iframe{
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+        footer{
+            width: 100%;
+            /* background-color: navajowhite; */
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        footer > div{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        footer > div > div:nth-child(1){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer > div > div:nth-child(1) h2{
+            font-size: 25px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        footer > div > div:nth-child(1) p{
+            margin-bottom: 8px;
+            color: rgb(79, 78, 78);
+            cursor: pointer;
+        }
+        footer > div > div:nth-child(1) p a{
+            color: rgb(79, 78, 78);
+            outline: none;
+            text-decoration: none;
+        }
+
+        footer > div > div:nth-child(1) p a:hover{
+            color: #ddaf4c;
+        }
+
+        footer > div > div:nth-child(1) > p:last-child a{
+            color: #ddaf4c;
+        }
+
+        footer > div > div:nth-child(2){
+            display: flex;
+        }
+
+        footer > div > div:nth-child(2) > div:nth-child(1){
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            width: 220px;
+        }
+        footer > div > div:nth-child(2) > div:nth-child(1) h2{
+            font-size: 25px;
+            color: black;
+            margin-bottom: 10px;
+        }
+        footer > div > div:nth-child(2) > div:nth-child(1) p{
+            margin-bottom: 8px;
+            color: rgb(79, 78, 78);
+        }
+
+        footer > div > div:nth-child(2) > div:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            width: 240px;
+        }
+        footer > div > div:nth-child(2) > div:nth-child(2) h2{
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+            color: black;
+            margin-bottom: 10px;
+        }
+        footer > div > div:nth-child(2) > div:nth-child(2) p{
+            margin-bottom: 8px;
+            color: rgb(79, 78, 78);
+        }
+
+        body > div{
+            width: 100%;
+            height: 60px;
+            background-color: rgb(253, 238, 215);
+            display: flex;
+            align-items: center;
+        }
+        body > div p{
+            margin-left: 50px;
+            font-size: 18px;
+            color: rgb(79, 78, 78);;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                <img src="./logo2.jpeg" alt="logo">
+            </div>
+            <div>
+                <div>
+                    <a href="facebook.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="instagram.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="agendar.html"><p>AGENDAR CONSULTA</p></a>
+                </div>
+                <div>
+                    <p><a href="index.html">Página Inicial</a></p>
+                    <p><a href="tratamentos.html">Tratamentos</a></p>
+                    <p><a href="contato.html">Contato</a></p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Informações de Contato</h1>
+            <div>
+                <div>
+                    <p>Endereço</p>
+                    <p>Av. tal, 244 - Conj E5 - Brasília - Distrito federal</p>
+                </div>
+                <div>
+                    <p>Email</p>
+                    <p>esteticaatendimento@gmail.com</p>
+                </div>
+                <div>
+                    <p>Horário de atendimento</p>
+                    <p>2ª - 6ª - 11:30 - 21:00</p>
+                </div>
+                <div>
+                    <p>Agende um horário</p>
+                    <p>Telefone: (61) 9999-9999</p>
+                    <p>Whatsapp: (61) 99999-9999</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>Alguma dúvida?</h1>
+            <p>Envie-nos uma mensagem!</p>
+            <form id="mensagemForm">
+                <input type="text" placeholder="Seu nome" id="mensagemFormNome" required>
+                <input type="email" placeholder="Seu e-mail" id="mensagemFormEmail" required>
+                <input type="text" placeholder="Seu telefone" id="mensagemFormTelefone" required>
+                <textarea placeholder="Sua mensagem" id="mensagemFormMensagem" required></textarea>
+                <input type="submit" value="ENVIAR MENSAGEM">
+            </form>
+        </div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61410.08351574325!2d-48.06759229038156!3d-15.849751782191994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2d98f7ffffff%3A0x4f7d7a315233f8c1!2sCentro%20Universit%C3%A1rio%20Est%C3%A1cio!5e0!3m2!1spt-BR!2sbr!4v1729870643636!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div>
+                <h2>Navegação</h2>
+                <p><a href="index.html">Página Inicial</a></p>
+                <p><a href="tratamentos.html">Tratamentos</a></p>
+                <p><a href="contato.html">Contato</a></p>
+            </div>
+            <div>
+                <div>
+                    <h2>Horário de atendimento</h2>
+                    <p>2ª - 6ª - 11:30 - 21:00</p>
+                    <p>Sábado: Fechado</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+                <div>
+                    <h2>Contato</h2>
+                    <p>Endereço: Av. tal, 244 - Conj E5 - Brasília - Distrito federal</p>
+                    <p>Telefone: (61) 9999-9999</p>
+                    <p>Whatsapp: (61) 99999-9999</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div>
+        <p>© 2024 Ana Estética Avançada, todos os direitos reservados</p>
+    </div>
+    <script>
+        document.getElementById("mensagemForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById("mensagemFormNome").value;
+            const email = document.getElementById("mensagemFormEmail").value;
+            const telefone = document.getElementById("mensagemFormTelefone").value;
+            const mensagem = document.getElementById("mensagemFormMensagem").value;
+
+            if (!nome || !email || !telefone || !mensagem){
+                return;
+            }
+
+            try {
+                const response = await fetch("salvarmensagem.php", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    },
+                    body: new URLSearchParams({
+                        nome, email, telefone, mensagem
+                    })
+                })
+
+                const data = await response.json();
+
+                if (response.status === 200){
+                    alert(data.success)
+                } else {
+                    alert(data.error)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+
+            document.getElementById("mensagemFormNome").value = "";
+            document.getElementById("mensagemFormEmail").value = "";
+            document.getElementById("mensagemFormTelefone").value = "";
+            document.getElementById("mensagemFormMensagem").value = "";
+        })
+    </script>
+</body>
+</html>
