@@ -13,4 +13,4 @@ CREATE TABLE mensagens(
 );
 
 INSERT INTO users VALUES ('67924348-efd5-49fb-9693-a634a19539f5', 'admin', '$2y$10$tMKsnaRzPpCXqEtW2U/HHelbteTYGypN//47/gEuzGzglzAdYBkIi');
-INSERT INTO mensagens (nome, email, telefone, mensagem) VALUES ('Ana Caroline', 'lealanacaroline00@gmail.com', '61993378679', 'Quero atendimento na sua clinica <3');
+
