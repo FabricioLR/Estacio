@@ -1,4 +1,5 @@
 <?php
+    include("db.php");
 
     if ($_SERVER["REQUEST_METHOD"] !== "POST"){
         exit;
@@ -11,7 +12,7 @@
     }
     
     try {
-        $conn = new PDO("mysql:host=localhost;dbname=trabalho_web", "root", "");
+        $conn = connect();
 
         $stmt = $conn->prepare("INSERT INTO mensagens (nome, email, telefone, mensagem) VALUES (:nome, :email, :telefone, :mensagem)");
         $stmt->bindParam(":nome", $_POST["nome"]);
