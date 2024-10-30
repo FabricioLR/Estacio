@@ -1,0 +1,42 @@
+SHOW DATABASES;
+
+CREATE DATABASE FicTeste;
+CREATE DATABASE IF NOT EXISTS FicTeste;
+
+DROP DATABASE FicTeste;
+DROP DATABASE IF EXISTS FicTeste;
+
+USE FicTeste;
+
+SHOW TABLES;
+
+CREATE TABLE TB_ALUNOS(
+	MATR CHAR(5),
+	NOME CHAR(40)
+);
+
+DESCRIBE TB_ALUNOS;
+
+INSERT TB_ALUNOS VALUES (10010, "JOSE MARIA");
+
+CREATE TABLE Empregado(
+	matr INTEGER NOT NULL,
+	nome VARCHAR(35),
+	salario REAL,
+	PRIMARY KEY(matr)
+);
+
+SELECT nome FROM Empregado WHERE salario > 7000;
+
+INSERT INTO Empregado VALUES (123, "Bárbara", 5000.00);
+
+DELETE FROM Empregado WHERE matr = 14;
+
+UPDATE Empregado SET salario = 1.15 WHERE salario < 1500.00
+
+
+
+
+
+
+
